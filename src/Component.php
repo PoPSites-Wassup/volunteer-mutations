@@ -19,6 +19,7 @@ class Component extends AbstractComponent
     public static function getDependedComponentClasses(): array
     {
         return [
+            \PoPSchema\CustomPosts\Component::class,
             \PoPSitesWassup\FormMutations\Component::class,
         ];
     }
