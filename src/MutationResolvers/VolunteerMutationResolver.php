@@ -4,17 +4,17 @@ declare(strict_types=1);
 
 namespace PoPSitesWassup\VolunteerMutations\MutationResolvers;
 
-use Symfony\Contracts\Service\Attribute\Required;
 use PoP\Application\FunctionAPIFactory;
 use PoP\ComponentModel\MutationResolvers\AbstractMutationResolver;
 use PoPSchema\CustomPosts\TypeAPIs\CustomPostTypeAPIInterface;
+use Symfony\Contracts\Service\Attribute\Required;
 
 class VolunteerMutationResolver extends AbstractMutationResolver
 {
     protected CustomPostTypeAPIInterface $customPostTypeAPI;
 
     #[Required]
-    public function autowireVolunteerMutationResolver(
+    final public function autowireVolunteerMutationResolver(
         CustomPostTypeAPIInterface $customPostTypeAPI,
     ): void {
         $this->customPostTypeAPI = $customPostTypeAPI;
